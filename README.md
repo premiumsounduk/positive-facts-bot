@@ -1,75 +1,55 @@
-# positive-facts-bot
+# Positive Facts Bot
 
-A Telegram bot that sends one positive fact per day about human progress since the year 2000 — covering global health, poverty, education, technology, environment, human rights, and science.
+A Telegram bot that delivers one positive fact per day about real human progress since the year 2000.
 
----
+Most news is negative by design — it captures attention. But the data tells a different story. Child mortality has halved. Extreme poverty has fallen below 10% for the first time in history. Diseases that paralysed children for centuries have been eradicated. Solar energy is now the cheapest electricity source ever recorded. This bot exists to surface that story, one fact at a time.
 
-## What we built and why
-
-The idea was simple: the world has made extraordinary progress in the last 25 years, but the news rarely reflects it. This bot sends one verified, sourced positive fact every morning at 09:00 UK time — a small daily reminder that things are genuinely getting better.
-
-### How it works
-
-1. **Facts are stored in `facts.json`** — a plain array of 30 objects, each with a `year`, `category`, and `fact`. No database, no API calls, no cost.
-
-2. **The daily fact is chosen deterministically** — using the day of the year (`day_of_year % total_facts`), so every subscriber always gets the same fact on the same day. The cycle repeats once the facts run out.
-
-3. **Subscribers are stored in `subscribers.json`** — a plain list of Telegram chat IDs. When someone sends `/start`, their ID is added. When they block the bot or send `/stop`, they are removed. No database needed.
-
-4. **APScheduler fires the daily job at 09:00 UK time** — it uses `AsyncIOScheduler` so it runs inside the same asyncio event loop as the bot, started via python-telegram-bot's `post_init` hook. No threading issues.
-
-5. **python-telegram-bot v21+ handles all Telegram communication** — fully async, using `CommandHandler` for each command and `run_polling` to keep the connection alive.
+Every morning at 09:00 UK time, subscribers receive a single verified fact — a real number, a real year, a real milestone. No opinion, no spin. Just progress.
 
 ---
 
-## Project structure
+## What it covers
 
-```
-positive-facts-bot/
-├── bot.py              # Main bot — commands, scheduler, daily sender
-├── facts.json          # 30 positive facts from 2000–2025
-├── subscribers.json    # Active subscriber chat IDs (auto-managed)
-├── .env                # Your secret bot token (not committed to git)
-├── .env.example        # Template for the .env file
-├── .gitignore          # Excludes .env and subscribers.json from git
-├── requirements.txt    # Pinned Python dependencies
-└── README.md           # This file
-```
+30 facts spanning 2000–2025 across seven categories:
+
+- **Health** — vaccines, disease eradication, HIV/AIDS, child and maternal mortality
+- **Poverty** — extreme poverty rates, economic development, hunger reduction
+- **Education** — literacy, school enrolment, gender parity
+- **Technology** — smartphones, solar energy, AI, space exploration
+- **Environment** — ozone recovery, renewable energy growth, conservation wins
+- **Human rights** — marriage equality, decriminalisation, legal protections
+- **Science** — genome sequencing, the Higgs boson, black hole imaging, CRISPR
 
 ---
 
 ## Commands
 
-| Command   | Description                          |
-|-----------|--------------------------------------|
-| `/start`  | Subscribe to daily facts at 09:00 UK |
-| `/stop`   | Unsubscribe                          |
-| `/today`  | Get today's fact on demand           |
-| `/random` | Get a random fact from the list      |
+| Command   | What it does                              |
+|-----------|-------------------------------------------|
+| `/start`  | Subscribe — receive a fact every day at 09:00 UK time |
+| `/stop`   | Unsubscribe                               |
+| `/today`  | Get today's fact right now               |
+| `/random` | Get a random fact from the full list     |
 
 ---
 
-## Fact categories
+## How it works
 
-The 30 starter facts span 7 categories across 2000–2025:
-
-- `health` — disease eradication, vaccines, HIV/AIDS progress, child mortality
-- `poverty` — extreme poverty reduction, economic development
-- `education` — literacy rates, school enrolment
-- `technology` — smartphones, solar energy, AI, space telescopes
-- `environment` — ozone recovery, renewables, conservation
-- `human_rights` — marriage equality, decriminalisation
-- `science` — genome sequencing, Higgs boson, black hole imaging, CRISPR
+- Facts live in `facts.json` — a plain list of objects with a `year`, `category`, and `fact`
+- Each day's fact is chosen by `day_of_year % total_facts`, so all subscribers always get the same fact on the same day and the cycle repeats automatically
+- Subscribers are stored in `subscribers.json` — a plain list of Telegram chat IDs, no database required
+- The daily 09:00 job runs via APScheduler inside the same async event loop as the bot
+- If a subscriber blocks the bot, they are automatically removed from the list
 
 ---
 
 ## Setup
 
-### 1. Create a Telegram bot
+### 1. Get a bot token
 
 1. Open Telegram and message [@BotFather](https://t.me/BotFather)
 2. Send `/newbot` and follow the prompts
-3. Copy the token BotFather gives you
+3. Copy the token you receive
 
 ### 2. Clone and configure
 
@@ -79,76 +59,50 @@ cd positive-facts-bot
 cp .env.example .env
 ```
 
-Edit `.env` and paste your token:
+Edit `.env`:
 
 ```
-BOT_TOKEN=123456789:ABCdefGHIjklMNOpqrSTUvwxYZ
+BOT_TOKEN=your_token_here
 ```
 
-### 3. Install dependencies
+### 3. Install and run
 
 ```bash
 python3 -m venv .venv
-source .venv/bin/activate   # Windows: .venv\Scripts\activate
+source .venv/bin/activate
 pip install -r requirements.txt
-```
-
-### 4. Run locally
-
-```bash
 python3 bot.py
 ```
 
-Open Telegram, find your bot, and send `/start`.
+Find your bot on Telegram and send `/start`.
 
 ---
 
-## Deploy on Render.com (background worker)
+## Deploy on Render.com
 
-Render runs the bot 24/7 as a background worker — no web server needed.
+To keep the bot running 24/7 after closing your laptop, deploy it as a background worker on Render.
 
-### Steps
+1. Push the repo to GitHub
+2. Sign in at [render.com](https://render.com) and click **New → Background Worker**
+3. Connect your GitHub repo
+4. Set the build command to `pip install -r requirements.txt` and start command to `python3 bot.py`
+5. Add `BOT_TOKEN` as an environment variable with your token
+6. Click **Create Background Worker** and check the logs to confirm it's live
 
-1. Push your repo to GitHub (`.env` is already in `.gitignore`)
-
-2. Go to [render.com](https://render.com) and sign in
-
-3. Click **New → Background Worker**
-
-4. Connect your GitHub repo (`positive-facts-bot`)
-
-5. Fill in the settings:
-   - **Name:** `positive-facts-bot`
-   - **Runtime:** Python
-   - **Build Command:** `pip install -r requirements.txt`
-   - **Start Command:** `python3 bot.py`
-
-6. Under **Environment Variables**, add:
-   - Key: `BOT_TOKEN`
-   - Value: your Telegram bot token
-
-7. Click **Create Background Worker**
-
-Render will build and deploy the bot. Check the **Logs** tab to confirm it's running.
-
-### Persistent storage note
-
-`subscribers.json` lives on Render's local filesystem and resets on each new deploy. For permanent persistence across deploys, consider:
-- A mounted **Render Disk** (paid feature)
-- A free hosted database such as [Supabase](https://supabase.com)
+> Note: `subscribers.json` resets on each deploy since it lives on Render's local filesystem. For permanent persistence, use a mounted Render Disk or a free hosted database like [Supabase](https://supabase.com).
 
 ---
 
-## Customising facts
+## Adding more facts
 
-Edit `facts.json` to add, remove, or change facts. Each entry must follow this schema:
+Edit `facts.json` and add entries following this format:
 
 ```json
 {
-  "year": 2023,
+  "year": 2024,
   "category": "health",
-  "fact": "Your fact text here."
+  "fact": "Your fact here."
 }
 ```
 
-The daily fact is chosen by `day_of_year % total_facts`, so the cycle is fully deterministic and consistent across all subscribers.
+The more facts you add, the longer the cycle before it repeats.
