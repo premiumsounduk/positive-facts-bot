@@ -1,0 +1,152 @@
+[
+  {
+    "year": 2000,
+    "category": "health",
+    "fact": "The global under-5 mortality rate stood at 76 deaths per 1,000 live births. By 2023 it had fallen to 37 — a reduction of more than 50%, saving millions of children's lives every single year."
+  },
+  {
+    "year": 2001,
+    "category": "human_rights",
+    "fact": "The Netherlands became the first country in the world to legalise same-sex marriage. By 2024, 35 countries had followed, extending marriage equality to hundreds of millions of people."
+  },
+  {
+    "year": 2002,
+    "category": "health",
+    "fact": "The Global Fund to Fight AIDS, Tuberculosis and Malaria was founded. By 2023 it had invested over $60 billion and helped save an estimated 59 million lives across more than 100 countries."
+  },
+  {
+    "year": 2003,
+    "category": "science",
+    "fact": "The Human Genome Project successfully mapped the complete human genome — all 3.2 billion DNA base pairs — opening the door to personalised medicine, gene therapy, and the CRISPR revolution."
+  },
+  {
+    "year": 2004,
+    "category": "environment",
+    "fact": "Wangari Maathai's Green Belt Movement planted its 30 millionth tree in Kenya, inspiring a UN Billion Tree Campaign that eventually tallied over 14 billion trees planted worldwide."
+  },
+  {
+    "year": 2005,
+    "category": "education",
+    "fact": "Global primary school enrolment reached 85%, up from 80% in 2000, with the steepest gains in sub-Saharan Africa where enrolment rose from 52% to 73% over the decade."
+  },
+  {
+    "year": 2006,
+    "category": "health",
+    "fact": "The FDA approved Gardasil, the world's first vaccine against human papillomavirus (HPV). Clinical studies show HPV vaccination reduces cervical cancer incidence by up to 88% in vaccinated women."
+  },
+  {
+    "year": 2007,
+    "category": "technology",
+    "fact": "Apple released the first iPhone, launching the smartphone era. By 2024, over 6.8 billion people carry a smartphone, connecting billions to financial services, healthcare, and education for the first time."
+  },
+  {
+    "year": 2008,
+    "category": "poverty",
+    "fact": "China completed one of history's greatest poverty reductions: between 1978 and 2008 the country lifted approximately 700 million people out of extreme poverty, cutting its poverty headcount rate from 88% to under 15%."
+  },
+  {
+    "year": 2009,
+    "category": "environment",
+    "fact": "Global wind energy capacity surpassed 150 GW for the first time, having doubled in just two years, as turbine technology improved and costs began their steep decade-long decline."
+  },
+  {
+    "year": 2010,
+    "category": "health",
+    "fact": "Global malaria mortality in Africa fell by 33% between 2000 and 2010, driven by the distribution of over 290 million insecticide-treated bed nets, indoor spraying programmes, and new artemisinin-based therapies."
+  },
+  {
+    "year": 2011,
+    "category": "health",
+    "fact": "Rinderpest — a cattle plague that caused mass famines for centuries across Africa and Asia — was officially declared eradicated, becoming only the second infectious disease in history to be wiped out, after smallpox."
+  },
+  {
+    "year": 2012,
+    "category": "science",
+    "fact": "Physicists at CERN's Large Hadron Collider confirmed the discovery of the Higgs boson after a 50-year search, completing the Standard Model of particle physics and deepening our understanding of why matter has mass."
+  },
+  {
+    "year": 2013,
+    "category": "poverty",
+    "fact": "For the first time in modern history, the share of the world's population living in extreme poverty fell below 10%, down from 36% in 1990 — one of the most dramatic improvements in human welfare ever recorded."
+  },
+  {
+    "year": 2014,
+    "category": "technology",
+    "fact": "The cost of utility-scale solar photovoltaic electricity had fallen by over 80% since 2008, making solar cost-competitive with coal and gas in many markets and triggering a global clean-energy investment boom."
+  },
+  {
+    "year": 2015,
+    "category": "human_rights",
+    "fact": "The US Supreme Court ruled in Obergefell v. Hodges that same-sex couples have a constitutional right to marry, legalising same-sex marriage across all 50 US states and giving legal recognition to millions of couples."
+  },
+  {
+    "year": 2016,
+    "category": "health",
+    "fact": "Wild poliovirus type 2 was certified as globally eradicated. The total number of wild polio cases fell from 350,000 per year in 1988 to just 33 in 2018, in one of public health's greatest ever achievements."
+  },
+  {
+    "year": 2017,
+    "category": "environment",
+    "fact": "Renewables accounted for two-thirds of all new net electricity generation capacity installed globally, with solar becoming the single largest source of new power capacity added in any year for the first time."
+  },
+  {
+    "year": 2018,
+    "category": "health",
+    "fact": "New HIV infections worldwide were 40% lower than at their late-1990s peak, and 21.7 million people were receiving life-saving antiretroviral therapy — up from just 685,000 people in 2000."
+  },
+  {
+    "year": 2019,
+    "category": "science",
+    "fact": "The Event Horizon Telescope released the first direct image of a black hole — a 6.5-billion-solar-mass object in galaxy M87 — confirming predictions of Einstein's general theory of relativity with extraordinary precision."
+  },
+  {
+    "year": 2019,
+    "category": "human_rights",
+    "fact": "Taiwan became the first country in Asia to legalise same-sex marriage following a landmark Constitutional Court ruling, a historic moment for LGBTQ+ rights across the Asia-Pacific region."
+  },
+  {
+    "year": 2020,
+    "category": "health",
+    "fact": "The Africa Regional Certification Commission declared the African continent entirely free of wild poliovirus, protecting 1.4 billion people and removing one of the continent's most persistent infectious disease threats."
+  },
+  {
+    "year": 2021,
+    "category": "science",
+    "fact": "mRNA COVID-19 vaccines were developed, trialled and deployed in under a year — compressing a process that traditionally takes over a decade — proving over 90% effective and establishing a platform that could transform vaccines for cancer and other diseases."
+  },
+  {
+    "year": 2021,
+    "category": "technology",
+    "fact": "The James Webb Space Telescope launched on 25 December, carrying humanity's largest and most powerful space telescope into an orbit 1.5 million km from Earth, designed to observe light from the universe's very first galaxies."
+  },
+  {
+    "year": 2022,
+    "category": "environment",
+    "fact": "A UN scientific assessment confirmed the ozone layer is on track to fully recover by around 2040, crediting the Montreal Protocol — which phased out ozone-depleting CFCs — as the most successful international environmental treaty ever signed."
+  },
+  {
+    "year": 2022,
+    "category": "science",
+    "fact": "The James Webb Space Telescope returned its first full-colour images, capturing thousands of galaxies in a patch of sky smaller than a grain of sand held at arm's length — the deepest and sharpest infrared view of the universe ever taken."
+  },
+  {
+    "year": 2023,
+    "category": "health",
+    "fact": "Casgevy became the world's first approved CRISPR gene-editing therapy, approved in both the UK and US, offering a one-time functional cure for sickle cell disease and beta-thalassaemia — conditions that had no cure for the millions who lived with them."
+  },
+  {
+    "year": 2023,
+    "category": "education",
+    "fact": "The global adult literacy rate reached approximately 87%, up from 76% in 1990, meaning an estimated 4.3 billion literate adults worldwide — the highest number in human history, with women making the fastest gains."
+  },
+  {
+    "year": 2024,
+    "category": "environment",
+    "fact": "Global installed solar energy capacity surpassed 2 terawatts for the first time — enough to theoretically power around 2 billion average homes — marking solar as the world's fastest-growing energy source for the twentieth consecutive year."
+  },
+  {
+    "year": 2025,
+    "category": "technology",
+    "fact": "AI-assisted protein structure prediction tools, building on the AlphaFold2 breakthrough, had mapped over 200 million protein structures by 2025, accelerating drug discovery for diseases including malaria, tuberculosis, and cancer by orders of magnitude."
+  }
+]
